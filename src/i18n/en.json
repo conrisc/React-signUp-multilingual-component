@@ -1,0 +1,7 @@
+{
+    "translation": {
+        "welcome.title": "Welcome to React and react-i18next",
+        "welcome.intro": "<h2>Intro</h2>",
+        "<0>nice</0>": "<0>Nice</0>"
+    }
+}
