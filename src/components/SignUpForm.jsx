@@ -44,6 +44,7 @@ function SignUpForm(props) {
     function handleSignUp(event) {
         event.preventDefault();
 
+        setResponseMessage('');
         const isFormValid = validateRequiredFields();
         if (isFormValid) {
             console.log('Sending signUp request');
