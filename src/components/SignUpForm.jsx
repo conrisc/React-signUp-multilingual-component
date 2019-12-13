@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { withTranslation } from 'react-i18next';
 
+import { validateEmail } from '../services/validatorService';
+import { signUp } from '../services/signUpService';
+import genderValues from '../models/genders';
+
 import FormInput from './common/FormInput'
 import FormCheckBox from './common/FormCheckbox';
 import FormRadioGroup from './common/FormRadioGroup';
 
 function SignUpForm(props) {
-    const genderValues = ['gender.male', 'gender.female'];
     const model = props.model || {};
     const [email, setEmail] = useState('');
     const [isAdult, setIsAdult] = useState(false);
     const [subscribeNewsletter, setSubscribeNewsletter] = useState(false);
-    const [gender, setGender] = useState(null);
+    const [gender, setGender] = useState('');
 
     const [isValid, setIsValid] = useState({
         email: true,
@@ -19,23 +22,43 @@ function SignUpForm(props) {
     });
 
     function handleEmailChange(newEmail) {
-        if (newEmail.trim() === '')
-            setIsValid({ ...isValid, email: false });
-        else
-            setIsValid({ ...isValid, email: true });
-
+        setIsValid({
+            ...isValid,
+            email: validateEmail(newEmail)
+        });
         setEmail(newEmail);
     }
 
     function handleIsAdultChange(newIsAdult) {
-        setIsValid({ ...isValid, isAdult: newIsAdult });
+        setIsValid({
+            ...isValid,
+            isAdult: newIsAdult
+        });
         setIsAdult(newIsAdult);
     }
 
     function handleSignUp(event) {
         event.preventDefault();
 
-        console.log('Sign up buton clicked');
+        const isFormValid = validateRequiredFields();
+        if (isFormValid) {
+            console.log('Sending signUp request');
+            const signUpData = {
+                email,
+                subscribeNewsletter,
+                gender
+            };
+            signUp(signUpData);
+        }
+    }
+
+    function validateRequiredFields() {
+        const newIsValid = {
+            email: validateEmail(email),
+            isAdult
+        }
+        setIsValid(newIsValid);
+        return Object.values(newIsValid).every(el => el);
     }
 
 
