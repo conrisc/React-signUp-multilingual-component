@@ -3,10 +3,11 @@ import React from 'react';
 export function SignUpForm(props) {
     return (
         <div className="row">
-            <form className="col s4 offset-s4">
+            <form className="col s12 l6 offset-l3 z-depth-2">
+                <h3>Sign Up</h3>
                 <div className="row">
-                    <div className="input-field col s12">
-                        <input placeholder="Email" type="email" class="validate" />
+                    <div className="input-field col s12 m6 offset-m3">
+                        <input placeholder="Email" type="email" className="validate" />
                     </div>
                 </div>
                 <p>
@@ -35,6 +36,9 @@ export function SignUpForm(props) {
                             <span>Female</span>
                         </label>
                     </p>
+                </div>
+                <div className="row">
+                    <button className="btn">Sign up</button>
                 </div>
             </form>
         </div>
