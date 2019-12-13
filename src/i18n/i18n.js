@@ -1,13 +1,8 @@
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
-import en from './en';
-import de from './de';
+import lngResources from './resources';
 
-
-const resources = {
-    en,
-    de
-};
+const resources = lngResources;
 
 i18next
     .use(initReactI18next)
