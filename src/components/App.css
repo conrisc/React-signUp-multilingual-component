@@ -23,3 +23,14 @@
     margin: 0 30%;
     font-size: 12px;
 }
+
+select {
+    display: block;
+}
+
+.language-selector {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    border: 1px solid #999;
+}
