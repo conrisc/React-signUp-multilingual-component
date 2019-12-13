@@ -6,6 +6,8 @@ import FormRadioGroup from './common/FormRadioGroup';
 
 function SignUpForm(props) {
     const genderValues = ['gender.male', 'gender.female'];
+    const model = props.model || {};
+
     const [email, setEmail] = useState('');
     const [isAdult, setIsAdult] = useState(false);
     const [subscribeNewsletter, setSubscribeNewsletter] = useState(false);
@@ -26,8 +28,12 @@ function SignUpForm(props) {
                     </div>
                 </div>
                 <FormCheckBox text="age.isadult" isChecked={isAdult} onChange={setIsAdult} />
-                <FormCheckBox text="subscribe.newsletter" isChecked={subscribeNewsletter} onChange={setSubscribeNewsletter} />
-                <FormRadioGroup title="gender.what" values={genderValues} selected={gender} onChange={setGender} />
+                {model.newsletter &&
+                    <FormCheckBox text="subscribe.newsletter" isChecked={subscribeNewsletter} onChange={setSubscribeNewsletter} />
+                }
+                {model.gender &&
+                    <FormRadioGroup title="gender.what" values={genderValues} selected={gender} onChange={setGender} />
+                }
                 <div className="row">
                     <button className="btn">{props.t('signup')}</button>
                 </div>
