@@ -1,10 +1,8 @@
 {
     "translation": {
-        "welcome.title": "Welcome in de",
-        "welcome.intro": "<h2>Intro in de</h2>",
-        "<0>nice</0>": "<0>Nice DE</0>",
-
         "signup": "Melden Sie",
+        "signup.success": "Ihr Konto wurde erstellt",
+        "signup.fail": "Registrierung fehlgeschlagen",
         "email": "Email",
         "email.invalid": "Geben Sie eine gültige E-Mail-Adresse an",
         "age.isadult": "Ich bin über 18 Jahre alt",

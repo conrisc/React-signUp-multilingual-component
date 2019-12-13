@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { withTranslation } from 'react-i18next';
 
+import Info from './Info';
+
 function FormCheckbox(props) {
     const isValid = props.isValid !== false;
     const [ isInfoVisible, setIsInfoVisible ] = useState(false);
@@ -28,11 +30,7 @@ function FormCheckbox(props) {
                     ?
                 </span>
             }
-            {isInfoVisible &&
-                <div className="info blue-text">
-                    {props.t(props.info)}
-                </div>
-            }
+            {isInfoVisible && <Info message={props.info} />}
         </div>
     );
 }

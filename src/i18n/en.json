@@ -1,10 +1,8 @@
 {
     "translation": {
-        "welcome.title": "Welcome to React and react-i18next",
-        "welcome.intro": "<h2>Intro</h2>",
-        "<0>nice</0>": "<0>Nice</0>",
-
         "signup": "Sign up",
+        "signup.success": "Your account has been created",
+        "signup.fail": "Registration failed",
         "email": "Email",
         "email.invalid": "Provide valid e-mail address",
         "age.isadult": "I'm over 18 years old",

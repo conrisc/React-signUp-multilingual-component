@@ -8,6 +8,8 @@ import genderValues from '../models/genders';
 import FormInput from './common/FormInput'
 import FormCheckBox from './common/FormCheckbox';
 import FormRadioGroup from './common/FormRadioGroup';
+import Spinner from './common/Spinner';
+import Info from './common/Info';
 
 function SignUpForm(props) {
     const model = props.model || {};
@@ -15,6 +17,8 @@ function SignUpForm(props) {
     const [isAdult, setIsAdult] = useState(false);
     const [subscribeNewsletter, setSubscribeNewsletter] = useState(false);
     const [gender, setGender] = useState('');
+    const [isAwaitingResponse, setIsAwaitingResponse] = useState(false);
+    const [responseMessage, setResponseMessage] = useState('');
 
     const [isValid, setIsValid] = useState({
         email: true,
@@ -48,7 +52,12 @@ function SignUpForm(props) {
                 subscribeNewsletter,
                 gender
             };
-            signUp(signUpData);
+            setIsAwaitingResponse(true);
+            signUp(signUpData)
+                .then(({ isSuccess }) => {
+                    setIsAwaitingResponse(false);
+                    setResponseMessage(isSuccess ? 'signup.success' : 'signup.fail')
+                });
         }
     }
 
@@ -92,6 +101,8 @@ function SignUpForm(props) {
                 <div className="row">
                     <button className="btn">{props.t('signup')}</button>
                 </div>
+                <Spinner isVisible={isAwaitingResponse} />
+                <Info message={responseMessage} />
             </form>
         </div>
     );
