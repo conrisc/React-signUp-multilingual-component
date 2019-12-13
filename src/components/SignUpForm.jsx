@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { withTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 
 import { validateEmail } from '../services/validatorService';
 import { signUp } from '../services/signUpService';
@@ -108,5 +109,10 @@ function SignUpForm(props) {
         </div>
     );
 }
+
+SignUpForm.propTypes = {
+    t:  PropTypes.func.isRequired,
+    model: PropTypes.object,
+};
 
 export default withTranslation()(SignUpForm);

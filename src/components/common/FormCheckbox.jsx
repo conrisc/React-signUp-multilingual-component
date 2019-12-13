@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { withTranslation } from 'react-i18next';
+import { PropTypes } from 'prop-types';
 
 import Info from './Info';
 
@@ -34,5 +35,15 @@ function FormCheckbox(props) {
         </div>
     );
 }
+
+FormCheckbox.propTypes = {
+    t: PropTypes.func.isRequired,
+    onChange:  PropTypes.func.isRequired,
+    info: PropTypes.string,
+    text: PropTypes.string,
+    isChecked: PropTypes.bool,
+    isValid: PropTypes.bool,
+    invalidMsg: PropTypes.string,
+};
 
 export default withTranslation()(FormCheckbox)

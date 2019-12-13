@@ -1,5 +1,6 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
+import { PropTypes } from 'prop-types';
 
 function Info(props) {
     return props.message ?
@@ -9,5 +10,9 @@ function Info(props) {
             </div>
         ) : null;
 }
+
+Info.propTypes = {
+    message:  PropTypes.string,
+};
 
 export default withTranslation()(Info)

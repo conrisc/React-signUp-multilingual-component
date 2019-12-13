@@ -1,11 +1,11 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
+import { PropTypes } from 'prop-types';
 
 function FormSelect(props) {
     function handleChange(event) {
         props.onChange(event.target.value);
     }
-    console.log(props)
 
     return (
         <select value={props.selected} onChange={handleChange}>
@@ -17,5 +17,12 @@ function FormSelect(props) {
         </select>
     );
 }
+
+FormSelect.propTypes = {
+    t: PropTypes.func.isRequired,
+    onChange:  PropTypes.func.isRequired,
+    selected: PropTypes.any.isRequired,
+    values: PropTypes.array.isRequired
+};
 
 export default withTranslation()(FormSelect);

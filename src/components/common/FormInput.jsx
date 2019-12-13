@@ -1,7 +1,8 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
+import { PropTypes } from 'prop-types';
 
-export function FormInput(props) {
+function FormInput(props) {
     
     function handleChange(event) {
         props.onChange(event.target.value);
@@ -22,5 +23,15 @@ export function FormInput(props) {
         </div>
     );
 }
+
+FormInput.propTypes = {
+    t: PropTypes.func.isRequired,
+    onChange:  PropTypes.func.isRequired,
+    placeholder: PropTypes.string,
+    type: PropTypes.string,
+    value: PropTypes.string,
+    isValid: PropTypes.bool,
+    invalidMsg: PropTypes.string,
+};
 
 export default withTranslation()(FormInput)

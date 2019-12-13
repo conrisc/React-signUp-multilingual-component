@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { withTranslation } from 'react-i18next';
+import { PropTypes } from 'prop-types';
 
 import './App.css';
 
@@ -41,5 +42,10 @@ function App(props) {
         </div>
     );
 }
+
+App.propTypes = {
+    t:  PropTypes.func.isRequired,
+    i18n:  PropTypes.object.isRequired
+};
 
 export default withTranslation()(App);

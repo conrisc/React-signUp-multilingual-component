@@ -1,7 +1,8 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
+import { PropTypes } from 'prop-types';
 
-export function FormRadioGroup(props) {
+function FormRadioGroup(props) {
 
     function handleChange(event) {
         props.onChange(event.target.value);
@@ -23,5 +24,13 @@ export function FormRadioGroup(props) {
         </div>
     );
 }
+
+FormRadioGroup.propTypes = {
+    t: PropTypes.func.isRequired,
+    onChange:  PropTypes.func.isRequired,
+    title: PropTypes.string,
+    selected: PropTypes.any.isRequired,
+    values: PropTypes.array.isRequired
+};
 
 export default withTranslation()(FormRadioGroup);

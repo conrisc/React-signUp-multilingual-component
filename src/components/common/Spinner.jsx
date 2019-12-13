@@ -1,6 +1,7 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 
-export default function Spinner(props) {
+function Spinner(props) {
     return props.isVisible ?
         (
             <div className="preloader-wrapper small active">
@@ -18,3 +19,9 @@ export default function Spinner(props) {
             </div>
         ) : null;
 }
+
+Spinner.propTypes = {
+    isVisible:  PropTypes.bool.isRequired,
+};
+
+export default Spinner;

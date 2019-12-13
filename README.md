@@ -36,5 +36,6 @@ After sending a request a user receives information whether account has been cre
 1. **React** - is responsible for building user interfaces, managing a state of an application and its view.
 2. **React Router DOM** - provides Routing to our React App
 3. **i18next** - it is complex framework which provides tools to create multilingual applications in a simple and transparent way. 
+4. **PropTypes** - provides types to applications thus comonent's props can be validated, it helps find bugs in our application. 
 
 
