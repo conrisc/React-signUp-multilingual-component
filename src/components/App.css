@@ -1,7 +1,25 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .mt-3 {
-  margin-top: 30px;
+    margin-top: 30px;
+}
+
+.symbol {
+    padding: 0px 6px;
+    margin: 5px;
+    border-radius: 12px;
+    border: 1px solid #AAA;
+    background: #FAFAFA;
+}
+
+.symbol:hover {
+    background: #EEE;
+}
+
+.info {
+    padding: 4px;
+    margin: 0 30%;
+    font-size: 12px;
 }

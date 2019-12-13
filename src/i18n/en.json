@@ -6,7 +6,9 @@
 
         "signup": "Sign up",
         "email": "Email",
-        "age.isadult": "Are you at least 18 yo?",
+        "email.invalid": "Provide valid e-mail address",
+        "age.isadult": "I'm over 18 years old",
+        "age.law": "By law you must be older than 18",
         "subscribe.newsletter": "Subscribe to newsletter",
         "gender.what": "What is your gender?",
         "gender.male": "Male",

@@ -6,7 +6,9 @@
 
         "signup": "Melden Sie",
         "email": "Email",
-        "age.isadult": "Bist du mindestens 18 Jahre alt?",
+        "email.invalid": "Geben Sie eine gültige E-Mail-Adresse an",
+        "age.isadult": "Ich bin über 18 Jahre alt",
+        "age.law": "Laut Gesetz müssen Sie älter als 18 Jahre sein",
         "subscribe.newsletter": "Newsletter abonnieren",
         "gender.what": "Was ist dein Geschlecht?",
         "gender.male": "Männlich",

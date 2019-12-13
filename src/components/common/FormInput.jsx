@@ -12,11 +12,13 @@ export function FormInput(props) {
             <input
                 placeholder={props.t(props.placeholder)}
                 type={props.type || "text"}
-                className="validate"
+                className={"validate" + (props.isValid === false ? " invalid" : "")}
                 value={props.value}
                 onChange={handleChange} 
             />
-            <span className="helper-text left-align">Helper text</span>
+            {props.isValid === false &&
+                <span className="helper-text left-align">{props.t(props.invalidMsg)}</span>
+            }
         </div>
     );
 }
