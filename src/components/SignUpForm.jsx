@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { withTranslation } from 'react-i18next';
 
-import FormCheckBox from './common/FormCheckbox.jsx';
+import FormInput from './common/FormInput'
+import FormCheckBox from './common/FormCheckbox';
 import FormRadioGroup from './common/FormRadioGroup';
 
 function SignUpForm(props) {
@@ -15,6 +16,7 @@ function SignUpForm(props) {
 
     function handleSignUp(event) {
         event.preventDefault();
+
         console.log('Sign up buton clicked');
     }
 
@@ -23,9 +25,7 @@ function SignUpForm(props) {
             <form className="col s12 l6 offset-l3 z-depth-2 mt-3" onSubmit={handleSignUp}>
                 <h4>{props.t('signup')}</h4>
                 <div className="row">
-                    <div className="col s12 m6 offset-m3">
-                        <input placeholder={props.t('email')} type="email" className="validate" value={email} onChange={(e)=> setEmail(e.target.value)}/>
-                    </div>
+                    <FormInput type="email" placeholder="email" value={email} onChange={setEmail} />
                 </div>
                 <FormCheckBox text="age.isadult" isChecked={isAdult} onChange={setIsAdult} />
                 {model.newsletter &&

@@ -5,7 +5,7 @@ import './App.css';
 
 import lngResources from '../i18n/resources';
 import SignUpFormModels from '../models/signUpForm/';
-import SignUpForm from './SignUpForm.jsx';
+import SignUpForm from './SignUpForm';
 
 function App(props) {
     const i18n = props.i18n;
