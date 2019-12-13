@@ -1,0 +1,15 @@
+{
+    "translation": {
+        "signup": "S'inscrire",
+        "signup.success": "Votre compte a été créé",
+        "signup.fail": "Échec de l'enregistrement",
+        "email": "Email",
+        "email.invalid": "Fournir une adresse e-mail valide",
+        "age.isadult": "J'ai plus de 18 ans",
+        "age.law": "Selon la loi, vous devez avoir plus de 18 ans",
+        "subscribe.newsletter": "S'inscrire à la Newsletter",
+        "gender.what": "Quel est ton sexe?",
+        "gender.male": "Mâle",
+        "gender.female": "Femme"
+    }
+}

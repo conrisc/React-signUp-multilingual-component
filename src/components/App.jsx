@@ -34,10 +34,10 @@ function App(props) {
 
     return (
         <div className="App">
-            <SignUpForm model={signUpFormModel} />
             <div className="language-selector">
                 <FormSelect values={availableLanguages.current} selected={language} onChange={setLanguage} />
             </div>
+            <SignUpForm model={signUpFormModel} />
         </div>
     );
 }
