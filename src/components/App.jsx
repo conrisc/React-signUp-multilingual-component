@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { withTranslation, Trans } from 'react-i18next';
-import { SignUpForm } from './SignUpForm.jsx';
+import SignUpForm from './SignUpForm.jsx';
 
 function App(props) {
   return (
