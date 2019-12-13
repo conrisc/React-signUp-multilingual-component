@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { withTranslation } from 'react-i18next';
+
 import FormCheckBox from './common/FormCheckbox.jsx';
 import FormRadioGroup from './common/FormRadioGroup';
 
 function SignUpForm(props) {
-    const genderValues = ['Male', 'Female'];
+    const genderValues = ['gender.male', 'gender.female'];
     const [email, setEmail] = useState('');
     const [isAdult, setIsAdult] = useState(false);
     const [subscribeNewsletter, setSubscribeNewsletter] = useState(false);
@@ -17,18 +18,18 @@ function SignUpForm(props) {
 
     return (
         <div className="row">
-            <form className="col s12 l6 offset-l3 z-depth-2" onSubmit={handleSignUp}>
-                <h4>Sign Up</h4>
+            <form className="col s12 l6 offset-l3 z-depth-2 mt-3" onSubmit={handleSignUp}>
+                <h4>{props.t('signup')}</h4>
                 <div className="row">
                     <div className="col s12 m6 offset-m3">
-                        <input placeholder="Email" type="email" className="validate" value={email} onChange={(e)=> setEmail(e.target.value)}/>
+                        <input placeholder={props.t('email')} type="email" className="validate" value={email} onChange={(e)=> setEmail(e.target.value)}/>
                     </div>
                 </div>
-                <FormCheckBox text="Are you at least 18 yo?" isChecked={isAdult} onChange={setIsAdult} />
-                <FormCheckBox text="Subscribe to newsletter" isChecked={subscribeNewsletter} onChange={setSubscribeNewsletter} />
-                <FormRadioGroup values={genderValues} selected={gender} onChange={setGender} />
+                <FormCheckBox text="age.isadult" isChecked={isAdult} onChange={setIsAdult} />
+                <FormCheckBox text="subscribe.newsletter" isChecked={subscribeNewsletter} onChange={setSubscribeNewsletter} />
+                <FormRadioGroup title="gender.what" values={genderValues} selected={gender} onChange={setGender} />
                 <div className="row">
-                    <button className="btn">Sign up</button>
+                    <button className="btn">{props.t('signup')}</button>
                 </div>
             </form>
         </div>

@@ -2,6 +2,14 @@
     "translation": {
         "welcome.title": "Welcome to React and react-i18next",
         "welcome.intro": "<h2>Intro</h2>",
-        "<0>nice</0>": "<0>Nice</0>"
+        "<0>nice</0>": "<0>Nice</0>",
+
+        "signup": "Sign up",
+        "email": "Email",
+        "age.isadult": "Are you at least 18 yo?",
+        "subscribe.newsletter": "Subscribe to newsletter",
+        "gender.what": "What is your gender?",
+        "gender.male": "Male",
+        "gender.female": "Female"
     }
 }

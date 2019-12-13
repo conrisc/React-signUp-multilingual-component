@@ -11,7 +11,7 @@ function FormCheckbox(props) {
         <p>
             <label>
                 <input type="checkbox" checked={props.isChecked} onChange={handleChange} />
-                <span>{props.text}</span>
+                <span>{props.t(props.text)}</span>
             </label>
         </p>
     );

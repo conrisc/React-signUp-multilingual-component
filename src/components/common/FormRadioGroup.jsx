@@ -9,13 +9,13 @@ export function FormRadioGroup(props) {
 
     return (
         <div>
-            <h6>What's your gender?</h6>
+            <h6>{props.t(props.title)}</h6>
             {
                 props.values.map((value, index) =>
                     <p key={index}>
                         <label>
                             <input type="radio" value={value} checked={value === props.selected} onChange={handleChange} />
-                            <span>{value}</span>
+                            <span>{props.t(value)}</span>
                         </label>
                     </p>
                 )

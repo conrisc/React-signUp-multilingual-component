@@ -2,6 +2,14 @@
     "translation": {
         "welcome.title": "Welcome in de",
         "welcome.intro": "<h2>Intro in de</h2>",
-        "<0>nice</0>": "<0>Nice DE</0>"
+        "<0>nice</0>": "<0>Nice DE</0>",
+
+        "signup": "Melden Sie",
+        "email": "Email",
+        "age.isadult": "Bist du mindestens 18 Jahre alt?",
+        "subscribe.newsletter": "Newsletter abonnieren",
+        "gender.what": "Was ist dein Geschlecht?",
+        "gender.male": "Männlich",
+        "gender.female": "Weiblich"
     }
 }
