@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { withTranslation } from 'react-i18next';
 import { PropTypes } from 'prop-types';
+import { useHistory } from "react-router-dom";
 
 import './App.css';
 
@@ -10,6 +11,7 @@ import FormSelect from './common/FormSelect';
 import SignUpForm from './SignUpForm';
 
 function App(props) {
+
     const i18n = props.i18n;
     const defaultLanguage = i18n.options.fallbackLng[0];
     const availableLanguages = useRef(Object.keys(lngResources));
@@ -17,11 +19,17 @@ function App(props) {
     const [language, setLanguage] = useState(defaultLanguage);
     const [signUpFormModel, setSignUpFormModel] = useState(SignUpFormModels[language]);
 
+    let history = useHistory();
+    function updateLanguage(lang) {
+        setLanguage(lang);
+        history.push(lang);
+    }
+
     useEffect(() => {
         i18n.changeLanguage(language);
         const defaultModel = SignUpFormModels[defaultLanguage];
         setSignUpFormModel(SignUpFormModels[language] || defaultModel);
-    }, [language, i18n]);
+    }, [i18n, language, defaultLanguage]);
 
     useEffect(() => {
         const lngParam = props.match.params.lng;
@@ -31,12 +39,12 @@ function App(props) {
         else
             props.history.push(`/${defaultLanguage}`)
 
-    }, [props.match.params]);
+    }, [defaultLanguage, props.history, props.match.params]);
 
     return (
         <div className="App">
             <div className="language-selector">
-                <FormSelect values={availableLanguages.current} selected={language} onChange={setLanguage} />
+                <FormSelect values={availableLanguages.current} selected={language} onChange={updateLanguage} />
             </div>
             <SignUpForm model={signUpFormModel} />
         </div>
@@ -44,8 +52,8 @@ function App(props) {
 }
 
 App.propTypes = {
-    t:  PropTypes.func.isRequired,
-    i18n:  PropTypes.object.isRequired
+    t: PropTypes.func.isRequired,
+    i18n: PropTypes.object.isRequired
 };
 
 export default withTranslation()(App);
